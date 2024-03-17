@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/imgs/pexels-dione-neris-16825355.jpg);
+    background-size: cover;
+    backdrop-filter: blur(4px);
+}
+
+.calculator {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.calculator input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.calculator input[type="button"] {
+    width: 20%;
+    height: 50px;
+    margin: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: #4caf50;
+    border-radius: 6px;
+    color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.calculator input[type="button"].operator {
+    background-color: #ffa500;
+}
+
+.calculator input[type="button"].equal {
+    background-color: #ff5733;
+    width: 96%;
+}

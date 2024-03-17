@@ -4,52 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notification Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/imgs/abufadel.ico" type="image/x-icon">
+    <title>12</title>
 </head>
 
 <body>
-
-    <button onclick="showNotification()">Show Notification</button>
-
-    <script>
-        function showNotification() {
-            // Check if the browser supports notifications
-            if (!("Notification" in window)) {
-                alert("This browser does not support desktop notification");
-            } else if (Notification.permission === "granted") {
-                // If permission is already granted, create a notification
-                var notification = new Notification("Hello, World!", {
-                    body: "This is a sample notification.",
-                    icon: "[1](https://example.com/notification-icon.png)" // Replace with your own icon URL
-                });
-            } else if (Notification.permission !== 'denied') {
-                // Otherwise, ask the user for permission
-                Notification.requestPermission().then(function (permission) {
-                    if (permission === "granted") {
-                        // If permission is granted, create a notification
-                        var notification = new Notification("Hello, World!", {
-                            body: "This is a sample notification.",
-                            icon: "[1](https://example.com/notification-icon.png)" // Replace with your own icon URL
-                        });
-                    }
-                });
-            }
-        }
-    </script>
-
+    <div class="calculator">
+        <input type="text" id="screen" readonly>
+        <br>
+        <input type="button" value="7" onclick="addToDisplay('7')">
+        <input type="button" value="8" onclick="addToDisplay('8')">
+        <input type="button" value="9" onclick="addToDisplay('9')">
+        <input type="button" class="operator" value="+" onclick="addToDisplay('+')">
+        <br>
+        <input type="button" value="4" onclick="addToDisplay('4')">
+        <input type="button" value="5" onclick="addToDisplay('5')">
+        <input type="button" value="6" onclick="addToDisplay('6')">
+        <input type="button" class="operator" value="-" onclick="addToDisplay('-')">
+        <br>
+        <input type="button" value="1" onclick="addToDisplay('1')">
+        <input type="button" value="2" onclick="addToDisplay('2')">
+        <input type="button" value="3" onclick="addToDisplay('3')">
+        <input type="button" class="operator" value="*" onclick="addToDisplay('*')">
+        <br>
+        <input type="button" value="0" onclick="addToDisplay('0')">
+        <input type="button" value="." onclick="addToDisplay('.')">
+        <input type="button" class="operator" value="C" onclick="clearDisplay()">
+        <input type="button" class="operator" value="/" onclick="addToDisplay('/')">
+        <br>
+        <input type="button" class="equal" value="=" onclick="calculate()">
+    </div>
+    </div>
+<!-- #b14e2b -->
+    <script src="/script.js"></script>
 </body>
 
 </html>
